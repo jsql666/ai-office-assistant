@@ -57,7 +57,7 @@ h1, h2, p { margin: 0; }
 .section-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
 .section-bar h2 { margin-bottom: 0; }
 .session-panel { display: flex; flex-direction: column; min-height: 0; border-top: 1px solid var(--line); padding-top: 1rem; }
-.session-list { overflow: auto; padding: .2rem; align-content: start; }
+.session-list { grid-auto-rows: max-content; overflow: auto; padding: .2rem; align-content: start; }
 .sidebar-choice {
     padding: .53rem .7rem;
     width: 100%;
