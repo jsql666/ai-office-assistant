@@ -1,0 +1,6 @@
+fastapi
+openai
+python-multipart
+uvicorn
+PyMySQL[rsa]>=1.1.1,<2
+python-dotenv

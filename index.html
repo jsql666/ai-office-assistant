@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI智能办公助手</title>
+    <link rel="stylesheet" href="/assets/office.css">
+    <script src="/assets/office.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="brand" href="/" aria-label="AI智能办公助手首页">
+            <span class="brand-icon" aria-hidden="true"></span>
+            AI智能办公助手
+        </a>
+
+        <nav class="assistant-panel" aria-labelledby="assistant-label">
+            <h2 id="assistant-label">助手分类</h2>
+            <div id="assistant-list" class="assistant-list"></div>
+        </nav>
+
+        <section class="session-panel" aria-labelledby="session-label">
+            <div class="section-bar">
+                <h2 id="session-label">历史会话</h2>
+                <button id="new-session" class="button button-new" type="button" disabled>＋ 新建</button>
+            </div>
+            <div id="session-list" class="session-list"></div>
+        </section>
+    </aside>
+
+    <main class="workspace">
+        <header class="workspace-header">
+            <div>
+                <h1 id="assistant-name">AI智能办公助手</h1>
+                <p id="assistant-description"></p>
+            </div>
+            <div class="session-actions" aria-label="会话操作">
+                <button id="edit-role" class="button" type="button" disabled>角色设置</button>
+                <button id="clear-session" class="button" type="button" disabled>清空</button>
+                <button id="export-session" class="button" type="button" disabled>导出</button>
+                <button id="delete-session" class="button button-danger" type="button" disabled>删除</button>
+            </div>
+        </header>
+
+        <section class="conversation" aria-label="当前会话">
+            <div id="empty-state" class="empty-state">
+                <h2 id="empty-title">选择助手开始</h2>
+                <button id="use-example" class="example-button" type="button" hidden></button>
+            </div>
+            <div id="messages" class="messages" aria-label="聊天记录"></div>
+        </section>
+
+        <form id="composer" class="composer">
+            <div class="composer-row">
+                <textarea id="message" aria-label="消息" placeholder="新建会话后输入消息" rows="2" required disabled></textarea>
+                <button id="send" class="button button-primary" type="submit" disabled>发送</button>
+            </div>
+            <p id="status" class="status" role="status"></p>
+        </form>
+    </main>
+
+    <dialog id="role-dialog" aria-labelledby="role-title">
+        <form id="role-form">
+            <h2 id="role-title">当前会话角色设置</h2>
+            <label for="role-prompt">系统提示词</label>
+            <textarea id="role-prompt" rows="6" required></textarea>
+            <div class="dialog-actions">
+                <button id="cancel-role" class="button" type="button">取消</button>
+                <button class="button button-primary" type="submit">保存</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
